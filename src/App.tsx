@@ -1,8 +1,8 @@
 import { Row, Col } from 'antd';
 import { getTwoArray } from './constants'
+import { useState } from 'react';
 
 import './App.css'
-import { useState } from 'react';
 
 const data = getTwoArray();
 
@@ -23,14 +23,19 @@ function App() {
     <div className="App">
       <Row justify="center">
         <div className="sum">
-          总分: {s} 分
+          <div className="title">
+            好运翻不停，只要别归零
+          </div>
+          <div className="score">
+            总分: {s} 分
+          </div>
         </div>
       </Row>
-      {data.map((item: number[], row: number) => (<Row>
+      {data.map((item: number[], row: number) => (<Row gutter={10}>
         {item.map((it: number, col: number) =>
-        <Col key={row+'-'+col}>
+        <Col key={row+'-'+col} span={4}>
         <div className="card" onClick={(e) => onClick(e, it)}>
-            <div className="card-face card-face-front">{col+1}-{row+1}</div>
+            <div className="card-face card-face-front">{row+1}-{col+1}</div>
             <div className="card-face card-face-back">{it === 0 ? '归零' : it}</div>
         </div>
         </Col>

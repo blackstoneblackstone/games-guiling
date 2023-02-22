@@ -2,18 +2,11 @@ export const data1 = [
 ]
 
 export const data = [
-  0,0,0,
-  0,0,0,
-  1,1,1,
-  2,2,2,
-  3,3,3,
-  4,4,4,
-  5,5,5,
-  5,5,5,
-  6,6,6,
-  7,7,7,
-  8,8,8,
-  9,9,9,
+  1,1,1,1,1,1,
+  2,2,2,2,2,2,
+  3,3,3,3,3,3,
+  4,4,4,4,4,4,
+  5,5,5,5,5,5,
 ]
 
 const getRandomArray = (arr: number[]) => {
@@ -33,8 +26,10 @@ export const getTwoArray = () => {
   const d = getRandomArray(data);
   const curData = [];
   for (let i = 0; i < 6; i++) {
-    const c = d.slice(i * 6, (i * 6 + 6));
+    const c = d.slice(i * 5, (i * 5 + 5));
+    c.splice(Math.floor(Math.random() * 5), 0, 0);
     curData.push(c);
   }
+  console.log('curData',curData);
   return curData;
 }
