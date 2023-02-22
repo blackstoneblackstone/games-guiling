@@ -33,8 +33,8 @@ export const getTwoArray = () => {
   const d = getRandomArray(data);
   const curData = [];
   for (let i = 0; i < 6; i++) {
-    const c = d.slice(i, i + 6);
-    curData.push(c)
+    const c = d.slice(i * 6, (i * 6 + 6));
+    curData.push(c);
   }
   return curData;
 }
