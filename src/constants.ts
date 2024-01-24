@@ -27,7 +27,7 @@ export const getTwoArray = () => {
   const curData = [];
   for (let i = 0; i < 6; i++) {
     const c = d.slice(i * 5, (i * 5 + 5));
-    c.splice(Math.floor(Math.random() * 5), 0, 0);
+    c.splice(Math.floor(Math.random() * 5 * 10), 0, 0);
     curData.push(c);
   }
   console.log('curData',curData);
